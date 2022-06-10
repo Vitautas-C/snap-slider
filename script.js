@@ -1,34 +1,26 @@
 const slider = document.querySelector(".slider")
 
-let timerId
-
 onmouseup = () => {
   onmousemove = null
 
   snapClosestSlide()
 }
 
-ontouchstart = () => {
-  let prevX, movement
 
-  clearTimeout(timerId)
+ontouchend = () => {
+  let timerId
 
-  ontouchmove = ({ touches: [{ clientX: x }] }) => {
-    if (prevX !== undefined) {
-      movement = Math.abs(x - prevX)
-    }
+  slider.onscroll = () => {
+    clearTimeout(timerId)
 
-    prevX = x
-  }
+    timerId = setTimeout(() => {
+      slider.onscroll = null
 
-  ontouchend = () => {
-    ontouchmove = null
-
-    timerId = setTimeout(snapClosestSlide, movement * 90)
-
-    console.log(movement)
+      snapClosestSlide()
+    }, 50)
   }
 }
+// ontouchstart = ({x: x0}) => alert(1)
 
 slider.onmousedown = ({ clientX: x0 }) => {
   const { scrollLeft } = slider
