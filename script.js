@@ -1,6 +1,6 @@
 const slider = document.querySelector(".slider")
 const preSlides = [...slider.children]
-const maxInertia = 30
+const maxInertia = 100
 
 while (slider.children.length < maxInertia * 2 + 1) {
   slider.append(...preSlides.map(slide => slide.cloneNode(true)))
