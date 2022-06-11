@@ -11,6 +11,12 @@
   height: 100%;
   background: green;
   margin: 0 0.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: antiquewhite;
+  font-size: 50px;
+  text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black;
 }
 
 ::-webkit-scrollbar {
