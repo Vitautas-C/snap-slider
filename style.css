@@ -11,16 +11,24 @@
   height: 100%;
   background: green;
   margin: 0 0.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: antiquewhite;
+  font-size: 50px;
+  text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black;
 }
 
 ::-webkit-scrollbar {
-  height: 0;
+  /* height: 0; */
 }
+
 @media (max-width: 960px) {
   .slide {
     width: 49%;
   }
 }
+
 @media (max-width: 480px) {
   .slide {
     width: 99%;
